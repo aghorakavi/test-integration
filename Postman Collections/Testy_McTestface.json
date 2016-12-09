@@ -1,0 +1,99 @@
+{
+  "info": {
+    "name": "Testy McTestface",
+    "_postman_id": "a568a284-1a39-0734-578f-bb6d6eec64f8",
+    "description": "Testing the new runner.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "dabad95c-c9b4-1f24-70f6-d6450eb92471",
+      "name": "POST request with eval",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "console.debug(\"POST test script\");",
+              "",
+              "tests[\"response code is 200\"] = responseCode.code === 200;",
+              "",
+              "console.log(\"Console log\\nWith newline\\n    and spaces.\");",
+              "",
+              "console.debug(\"Console debug\", \"with multiple\", \"arguments.\");",
+              "",
+              "console.warn(\"Just a warning.\");",
+              "",
+              "console.error(\"Oh well!\", \"¯\\\\_(Ä)_/¯\");",
+              "",
+              "console.log(\"Pretty printed object:\", JSON.stringify({cat:{head:\"big\",tail:\"long\",ears:\"furry\"},dog:{head:\"bigger\",tail:\"waggy\",ears:\"floppy\"}}, null, 2));",
+              "",
+              "tests[\"trivial eval works\"] = eval(\"1 + 2\") === 3;",
+              "",
+              "eval(\"function blob (x) { return \\\"blob\\\" + (x || \\\"\\\"); }\");",
+              "",
+              "tests[\"function `blob` evals\"] = blob(\"sauce\") === \"blobsauce\";"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "console.log(\"POST pre-request script\");"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://httpbin.org/post",
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"hello\": \"world\" }"
+        },
+        "description": "POST"
+      }
+    },
+    {
+      "_postman_id": "ef21d96e-c30d-9967-49eb-2f2eee1a7826",
+      "name": "Get with more emoji",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "console.log(\"GET tests script\");",
+              "",
+              "tests[\"response code is 200\"] = responseCode.code === 200;",
+              "",
+              "console.debug(\""
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "console.log(\"GET pre-request script\");",
+              "",
+              "console.debug(\""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://httpbin.org/get",
+        "method": "GET",
+        "body": {
+          "mode": "formdata"
+        },
+        "description": ""
+      }
+    }
+  ]
+}
