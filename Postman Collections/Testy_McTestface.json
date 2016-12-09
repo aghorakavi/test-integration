@@ -94,44 +94,6 @@
         },
         "description": ""
       }
-    },
-    {
-      "_postman_id": "6a452a59-59be-e743-08c5-0ad78a35da21",
-      "name": "Get with more emoji copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "console.log(\"GET tests script\");",
-              "",
-              "tests[\"response code is 200\"] = responseCode.code === 200;",
-              "",
-              "console.debug(\""
-            ]
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "console.log(\"GET pre-request script\");",
-              "",
-              "console.debug(\""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://httpbin.org/get",
-        "method": "GET",
-        "body": {
-          "mode": "formdata"
-        },
-        "description": ""
-      }
     }
   ]
 }
