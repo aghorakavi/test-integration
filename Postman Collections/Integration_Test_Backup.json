@@ -17,18 +17,6 @@
         },
         "description": ""
       }
-    },
-    {
-      "_postman_id": "5affb405-7e5c-7696-71e7-8b6cdce00721",
-      "name": "https://api.github.com/repositories copy",
-      "request": {
-        "url": "https://api.github.com/repositories",
-        "method": "GET",
-        "body": {
-          "mode": "formdata"
-        },
-        "description": ""
-      }
     }
   ]
 }
